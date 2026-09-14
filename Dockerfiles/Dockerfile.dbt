@@ -1,0 +1,4 @@
+FROM ghcr.io/dbt-labs/dbt-core:1.7.0
+WORKDIR /usr/app
+COPY mini-proj /usr/app
+CMD ["dbt", "run", "--project-dir", "/usr/app"]

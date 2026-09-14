@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  scrapping:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.scrapping
+    volumes:
+      - ./scrapping/data:/app
+    networks:
+      - data_net
+
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.dbt
+    volumes:
+      - ./mini-proj:/usr/app
+    networks:
+      - data_net
+
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.airflow
+    ports:
+      - "8080:8080"
+    networks:
+      - data_net
+
+  metabase:
+    image: metabase/metabase:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - data_net
+
+networks:
+  data_net:
+    driver: bridge

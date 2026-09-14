@@ -1,0 +1,5 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY scrapping/data /app
+RUN pip install requests pandas
+CMD ["python", "countries.py"]

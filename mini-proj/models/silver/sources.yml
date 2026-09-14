@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: src_raw
+    database: projectdb
+    schema: bronze
+    tables:
+      - name: raw_countries
+        columns:
+          - name: uuid
+            description: "Unique ID"
+          - name: name
+            description: "Country name"
+          - name: capital
+            description: "Capital Name"
+          - name: population
+            description: "Total Population"
+          - name: area
+            description: "Total Area (KM2)"
+
+      - name: countries
+        columns:
+          - name: cty_pkey
+            description: "Primary Key"
+          - name: cty_cd2
+            description: "Unique Code Alpha2"
+          - name: cty_cd3
+            description: "Unique Code Alpha3"
+          - name: cty_iso
+            description: "Numeric Iso"
+          - name: fips_cd
+            description: "fips"
+          - name: country
+            description: "Country Name"
+          - name: capital
+            description: "Capital Name"
+          - name: area
+            description: "Area per KM2"
+          - name: population
+            description: "Total Population"
+          - name: continent
+            description: "Continental"

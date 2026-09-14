@@ -1,0 +1,40 @@
+name: mini_proj
+
+profile: mini_proj
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  # Builds seeds into '<your_schema_name>_raw'
+  mini_proj:
+    +schema: raw
+
+models:
+  mini_proj:
+    +static_analysis: strict
+    # Materialize staging models as views, and marts as tables
+    bronze:
+      +schema: BRONZE
+      +materialized: table
+      +meta:
+        snowflake_warehouse: proj_wh
+    silver:
+      +schema: SILVER
+      +materialized: table
+      +meta:
+        snowflake_warehouse: proj_wh
+    gold:
+      +schema: GOLD
+      +materialized: table
+      +meta:
+        snowflake_warehouse: proj_wh
+    # raw:
+    #   # +schema: raw
+    #   +materialized: table
+    #   +meta:
+    #     snowflake_warehouse: compute_wh

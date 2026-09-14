@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: raw
+    database: datawarehouse
+    schema: raw
+    tables:
+      - name: raw_countries
+        columns:
+          - name: uuid
+            description: "Unique ID"
+          - name: name
+            description: "Country name"
+          - name: capital
+            description: "Capital Name"
+          - name: population
+            description: "Total Population"
+          - name: area
+            description: "Total Area (KM2)"
+
+      - name: world_countries
+        columns:
+          - name: iso_alpha2
+            description: "Unique Code Alpha2"
+          - name: iso_alpha3
+            description: "Unique Code Alpha3"
+          - name: iso_numeric
+            description: "Numeric Iso"
+          - name: fips
+            description: "fips"
+          - name: country
+            description: "Country Name"
+          - name: capital
+            description: "Capital Name"
+          - name: area_km2
+            description: "Area per KM2"
+          - name: population
+            description: "Total Population"
+          - name: continent
+            description: "Continental"
+          
+            
+          
