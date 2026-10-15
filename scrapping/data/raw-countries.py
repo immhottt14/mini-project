@@ -29,12 +29,12 @@ print(df)
 
 # Connector snowflake
 conn = snowflake.connector.connect(
-    user="LAMHOTPT",
-    password="P@ssvv0rdP@ssvv0rd!!",             
-    account="FCHSPXS-RP17491",  
+    user="ibnumaulana",
+    password="Ibp!2345Ibp!2345",             
+    account="OZGOQZU-EF24647",  
     warehouse="COMPUTE_WH",
-    database="DATAWAREHOUSE",
-    schema="RAW",
+    database="PROJECTDB",
+    schema="BRONZE",
     role="ACCOUNTADMIN",
     authenticator="snowflake"         
 )

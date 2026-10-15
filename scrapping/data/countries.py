@@ -11,11 +11,12 @@ response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
 
 # Scrape data
-table = soup.find('table', {'id': 'countries'})
-print(f"Number of table = {len(table)}")
+table = soup.find('table', class_="stats-table") 
+#{'id': 'countries'})
+#print(f"Number of table = {len(table)}")
 
 rows = table.find_all('tr')
-print(f"Number of rows = {len(rows)}")
+#print(f"Number of rows = {len(rows)}")
 
 data = []
 for row in rows:
@@ -31,12 +32,12 @@ df = pd.DataFrame(data[1:], columns=data[0])
 
 # Connector snowflake
 conn = snowflake.connector.connect(
-    user="LAMHOTPT",
-    password="P@ssvv0rdP@ssvv0rd!!",             
-    account="FCHSPXS-RP17491",  
+    user="ibnumaulana",
+    password="Ibp!2345Ibp!2345",             
+    account="OZGOQZU-EF24647",  
     warehouse="COMPUTE_WH",
-    database="DATAWAREHOUSE",
-    schema="RAW",
+    database="PROJECTDB",
+    schema="BRONZE",
     role="ACCOUNTADMIN",
     authenticator="snowflake"         
 )

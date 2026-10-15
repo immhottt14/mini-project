@@ -22,17 +22,17 @@ models:
       +schema: BRONZE
       +materialized: table
       +meta:
-        snowflake_warehouse: proj_wh
+        snowflake_warehouse: compute_wh
     silver:
       +schema: SILVER
       +materialized: table
       +meta:
-        snowflake_warehouse: proj_wh
+        snowflake_warehouse: compute_wh
     gold:
       +schema: GOLD
       +materialized: table
       +meta:
-        snowflake_warehouse: proj_wh
+        snowflake_warehouse: compute_wh
     # raw:
     #   # +schema: raw
     #   +materialized: table

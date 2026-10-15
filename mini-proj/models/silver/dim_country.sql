@@ -3,5 +3,7 @@ SELECT
     cty_cd3 as country_cd, 
     country,
     capital,
-    continent
+    continent,
+    area_km2,
+    population
 FROM {{ ref('countries') }}

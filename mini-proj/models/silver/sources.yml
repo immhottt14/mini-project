@@ -5,19 +5,6 @@ sources:
     database: projectdb
     schema: bronze
     tables:
-      - name: raw_countries
-        columns:
-          - name: uuid
-            description: "Unique ID"
-          - name: name
-            description: "Country name"
-          - name: capital
-            description: "Capital Name"
-          - name: population
-            description: "Total Population"
-          - name: area
-            description: "Total Area (KM2)"
-
       - name: countries
         columns:
           - name: cty_pkey

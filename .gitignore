@@ -3,3 +3,33 @@ airflow-venv/
 logs/
 __pycache__/
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+airflow-venv/
+
+# Airflow
+airflow.db*
+logs/
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Snowflake
+profiles.yml
+
+# Secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

@@ -2,22 +2,9 @@ version: 2
 
 sources:
   - name: raw
-    database: datawarehouse
-    schema: raw
+    database: projectdb
+    schema: bronze
     tables:
-      - name: raw_countries
-        columns:
-          - name: uuid
-            description: "Unique ID"
-          - name: name
-            description: "Country name"
-          - name: capital
-            description: "Capital Name"
-          - name: population
-            description: "Total Population"
-          - name: area
-            description: "Total Area (KM2)"
-
       - name: world_countries
         columns:
           - name: iso_alpha2
@@ -38,6 +25,3 @@ sources:
             description: "Total Population"
           - name: continent
             description: "Continental"
-          
-            
-          
